@@ -35,7 +35,23 @@
         color: green;
         text-decoration: none;
     }
-</style>
+    .socials{
+        display:block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 220px;
+        height: 220px;
+        border-radius: 100%;
+    }
+    .row {
+        display: flex;
+    }
+
+    .column {
+        flex: 33.33%;
+        padding: 5px;
+    }
+    </style>
 <body>
     <!--div>
         <img onclick="toggleMode()" src="/resources/toggle.png" alt="Toggle Mode" />
@@ -50,10 +66,24 @@
         <p id ="moreabout">Here's my <a href="https://akshaj000.github.io/Blogs/">blog</a>, <a href="url">CV</a> and some <a href="url">projects</a>.</p>
     </div>
     <div class = "socials">
-        <div>
-
+    <div class="row">
+        <div class="column">
+          <a href="https://www.github.com/Akshaj000/">
+            <img src="/resources/github.png" alt="Snow" style="width:100%" alt = "My Github">
+          </a> 
         </div>
-    </div>    
+        <div class="column">
+            <a href="https://twitter.com/sr_akshaj">
+                <img src="/resources/twitter.png" alt="Snow" style="width:90%" alt = "My Twitter">
+            </a> 
+        </div>
+        <div class="column">
+            <a href="https://stackoverflow.com/users/16285669/akshaj-sr">
+                <img src="/resources/stackoverflow.png" alt="Snow" style="width:70%" alt = "My stackoverflow">
+            </a> 
+        </div>
+      </div>  
+      </div> 
 </body>
 </html>
 
