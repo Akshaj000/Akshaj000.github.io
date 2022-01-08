@@ -8,12 +8,23 @@
 </head>
 
 <style>
+    .dark-mode {
+       background-color: rgb(21, 34, 34);
+       color: white;
+    } 
+    body{
+        
+        background-color:rgba(218, 231, 205, 0.561);
+        color:black;
+        overflow: hidden;
+       
+    }
     #dp{
         display:block;
         margin-left: auto;
         margin-right: auto;
         width: 100%;
-        max-width: 600px;
+        max-width: 500px;
         height: auto;
         border-radius: 100%;
     }
@@ -23,6 +34,14 @@
         font-size: large;
         font-family: 'Courier New', Courier, monospace ;
     }
+    #my-details{
+        text-align: center;
+        padding-block-end: 40;
+        padding-top: 10px;
+        padding-bottom: 3px;
+        font-size: x-large;
+        font-family: 'Courier New', Courier, monospace;
+    }
     #moreabout{
         text-align: center;
         padding-block-end: 20;
@@ -31,8 +50,8 @@
         font-size: large;
         font-family: 'Courier New', Courier, monospace ;
     }
-    a{
-        color: green;
+    .link{
+        color: hsl(128, 53%, 19%);
         text-decoration: none;
     }
     .socials{
@@ -51,39 +70,88 @@
         flex: 33.33%;
         padding: 5px;
     }
+    .toggle{
+        padding-top: 10px;
+        display:block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        border-radius: 100%;
+    }
     </style>
-<body>
-    <!--div>
-        <img onclick="toggleMode()" src="/resources/toggle.png" alt="Toggle Mode" />
-    </div-->
+<body >
+    <div class="toggle">
+        <img onclick="toggleMode()" src="/resources/toggleoff.png" id="switch" alt="Toggle Mode" />
+    </div>
     <div class="displaypic">
         <img src="/resources/profilepic.png" id ="dp" alt="AkshajDP">
     </div>
     <div class="text">
-        <p id="about">Hi, Im Akshaj.</p>
+        <p id="about"> &#128075 Hi, Im <strong>Akshaj</strong>.</p>
+    </div>
+    <div class ="text">
+        <p id="my-details">Student at Amrita</p>
     </div>
     <div class="text">
-        <p id ="moreabout">Here's my <a href="https://akshaj000.github.io/Blogs/">blog</a>, <a href="url">CV</a> and some <a href="url">projects</a>.</p>
+        <p id ="moreabout">Here's my <a class="link" href="https://akshaj000.github.io/Blogs/">blog</a>, <a class="link" href="url">CV</a> and some <a class="link" href="url">projects</a>.</p>
     </div>
     <div class = "socials">
-    <div class="row">
+      <div class="row">
         <div class="column">
           <a href="https://www.github.com/Akshaj000/">
-            <img src="/resources/github.png" alt="Snow" style="width:100%" alt = "My Github">
+            <img src="/resources/github.png" style="width:100%" alt = "My Github">
           </a> 
         </div>
         <div class="column">
             <a href="https://twitter.com/sr_akshaj">
-                <img src="/resources/twitter.png" alt="Snow" style="width:90%" alt = "My Twitter">
+                <img src="/resources/twitter.png" style="width:90%" alt = "My Twitter">
             </a> 
         </div>
         <div class="column">
             <a href="https://stackoverflow.com/users/16285669/akshaj-sr">
-                <img src="/resources/stackoverflow.png" alt="Snow" style="width:70%" alt = "My stackoverflow">
+                <img src="/resources/stackoverflow.png" style="width:80%" alt = "My stackoverflow">
             </a> 
         </div>
       </div>  
-      </div> 
+    </div> 
+    <script type="text/javascript">
+        i=1;
+        function toggleMode() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+            var image = document.getElementById("switch");
+            var link = document.getElementsByClassName("link");
+            if (i%2==1){
+                image.src = "/resources/toggleon.png";
+                link[0].style.color = "rgb(153, 221, 153)";
+                link[1].style.color = "rgb(153, 221, 153)"
+                link[2].style.color = "rgb(153, 221, 153)"
+            }
+            else if (i%2==0){
+                image.src = "/resources/toggleoff.png";
+                link[0].style.color = "hsl(128, 53%, 19%)";
+                link[1].style.color = "hsl(128, 53%, 19%)"
+                link[2].style.color = "hsl(128, 53%, 19%)"
+            }
+            i+=1;         
+ 
+        }
+
+        function changeDescription(){
+            var details = document.getElementById("my-details");
+            mydetails=['Student at Amrita','New to tech world','Loves to Explore','Member @AMFOSS']
+            const randomElement = mydetails[Math.floor(Math.random() * mydetails.length)];
+            details.textContent=randomElement;
+        }
+        function changeDescription2 (){
+            setTimeout(() => { changeDescription(); }, 2000);
+            setTimeout(() => { changeDescription2(); }, 2000);
+        }
+        changeDescription2();
+        
+    </script>
 </body>
 </html>
 
