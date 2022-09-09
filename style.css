@@ -1,0 +1,117 @@
+.dark-mode {
+    background-color: rgb(21, 34, 34);
+    color: white;
+}
+
+.link-dark-mode {
+    color: rgb(153, 221, 153);
+    text-decoration: none;
+}
+
+.link-light-mode{
+    color: hsl(128, 53%, 19%);
+    text-decoration: none;
+}
+
+body{
+
+    background-color:rgba(225, 245, 206, 0.753);
+    color:black;
+}
+#dp{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40vh;
+    border-radius: 100%;
+}
+#about{
+    text-align: center;
+    padding-top: 40px;
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace ;
+}
+#my-details{
+    text-align: center;
+    padding-block-end: 40;
+    padding-top: 10px;
+    padding-bottom: 3px;
+    font-size: 120%;
+    font-family: 'Courier New', Courier, monospace;
+}
+#moreabout{
+    text-align: center;
+    padding-block-end: 20;
+    padding-top: 10px;
+    padding-bottom: 40px;
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace ;
+}
+
+.socials{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 220px;
+    height: 220px;
+    border-radius: 100%;
+}
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 33.33%;
+    padding: 5px;
+}
+.toggle{
+    padding-top: 10px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 100%;
+}
+
+#home{
+    padding-top: 3vh;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 30px;
+    height: auto;
+}
+
+#lister {
+    background: rgba(0, 0, 0, 0.26);
+    margin-top: 2vh;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50vh;
+    height: 78vh;
+    border-radius: 3%;
+    overflow-y: scroll;
+}
+
+.list-element{
+    padding: 5px;
+    text-align: center;
+    display: block;
+    background: rgba(255, 255, 255, 0.16);
+    width: auto;
+    height: auto;
+    margin: 12px 12px;
+    color: white;
+    border-radius: 2%;
+    text-decoration: none;
+}
+
+.list-element:hover{
+    background: rgba(255, 255, 255, 0.34);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
