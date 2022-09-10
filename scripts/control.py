@@ -1,4 +1,5 @@
 import argparse
+from operator import contains
 import os
 from datetime import date
 from pydoc import describe
@@ -121,9 +122,14 @@ def add_to_my_details():
 def remove_from_my_details():
     remove_from_json("details")
 
+def check_drive_link(link):
+    if "https://drive.google.com/file/d/" in link:
+        link = "https://drive.google.com/uc?export=view&id={}".format(link.split("/")[5])
+    return link
+
 def add_to_gallery():
     entry = {
-        "source" : pyip.inputURL("Enter the source link :  ")
+        "source" : check_drive_link(pyip.inputURL("Enter the source link :  "))
     }
     update_json('../json/gallery.json', entry)
 

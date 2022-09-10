@@ -1,6 +1,6 @@
 const addContent = (content) => {
-    console.log(content)
     const list_container = document.getElementById('lister')
+
     let parent = document.createElement("img")
     parent.classList.add("gallery-element")
     parent.style.width = "100%";
