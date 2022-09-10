@@ -15,10 +15,16 @@ const addContent = (content) => {
     }
     parent.href = content["link"]
     if (content["type"] == "youtube") {
-        let splited = content["link"].split("/")
         if (!content["link"].includes("embed")) {
-            content["link"] = `https://www.youtube.com/embed/${splited[splited.length-1]}`
+            let splited = content["link"].split("=")
+            if(content["link"].includes("playlist")){
+                content["link"] = `https://www.youtube.com/embed/?listType=playlist&list=${splited[splited.length-1]}`
+                
+            } else{
+                content["link"] = `https://www.youtube.com/embed/${splited[splited.length-1]}`
+            }
         } else {
+            let splited = content["link"].split("/")
             parent.href = `https://www.youtube.com/watch?v=${splited[splited.length-1]}`
         }
         let child = document.createElement("iframe");
@@ -67,11 +73,14 @@ const addContent = (content) => {
 }
 
 const fetchContent = () => {
-    const contents = [{},{},{},{}]
-
-    for (let i = 0; i < contents.length; i++) {
-        addContent(contents[i])
-    }
+    fetch("../json/bookmarks.json")
+        .then(response => response.json())
+        .then(data => {
+            for(let i=0; i< data.length; i++){
+                addContent(data[i])
+            }
+        }
+    )
 }
 
-onload(fetchContent())
+fetchContent()

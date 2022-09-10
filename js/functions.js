@@ -43,15 +43,21 @@ const toggleThemeOnDefault = () => {
 }
 
 const changeDetailOnDefault = () => {
-    let details = document.getElementById("my-details");
-    let mydetails = ['Tech Enthusiast','Explorer', 'Student at Amrita University']
-    const randomElement = mydetails[Math.floor(Math.random() * mydetails.length)];
-    details.textContent=randomElement;
-    setTimeout(() => { changeDetailOnDefault(); }, 2000);
+    fetch("../json/details.json")
+        .then(response => response.json())
+        .then(data => {
+            let mydetails = data
+            let details = document.getElementById("my-details");
+            const randomElement = mydetails[Math.floor(Math.random() * mydetails.length)];
+            details.textContent=randomElement.detail;
+            setTimeout(() => { changeDetailOnDefault(); }, 2000);
+        }
+    )
 }
 
 const start = () => {
     toggleThemeOnDefault();
+
     try {
         changeDetailOnDefault();
     }catch (e){}

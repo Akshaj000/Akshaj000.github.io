@@ -16,7 +16,7 @@ except:
 def update_json(filename, entry):
     with open(filename, "r+") as file:
         data = json.load(file)
-        data.insert(0,entry)
+        data.append(entry)
         file.seek(0)
         json.dump(data, file)
 
@@ -78,7 +78,7 @@ def update_all_blogs():
         update_blog("./blogs/{}".format(filename))
 
 def bookmark():
-    type = pyip.inputMenu(['Youtube', 'Twitter', 'Instagram', 'Others'], lettered=True)
+    type = pyip.inputMenu(['youtube', 'twitter', 'instagram', 'other'], lettered=True)
     hastitle = pyip.inputYesNo("Do u need to add title ? ")
     title = None
     if hastitle == "yes":
@@ -109,6 +109,15 @@ def add_to_my_details():
 def remove_from_my_details():
     remove_from_json("details")
 
+def add_to_gallery():
+    entry = {
+        "source" : pyip.inputStr("Enter the source link :  ")
+    }
+    update_json('../json/gallery.json', entry)
+
+def remove_from_gallery():
+    remove_from_json("gallery")
+
 def push():
     os.system("cd .. ; ls; git add json; git status; git push -f")
     
@@ -120,6 +129,8 @@ my_parser.add_argument('-e','--edit', help='Edit already exisiting blog', const=
 my_parser.add_argument('-u','--update', help='Update all exisiting blog', const=True, nargs="?")
 my_parser.add_argument('-b','--bookmark', help='Bookmark something', const=True, nargs="?")
 my_parser.add_argument('-br','--remove_bookmark', help='Remove bookmark', const=True, nargs="?")
+my_parser.add_argument('-g','--addtogallery', help='Add to gallery', const=True, nargs="?")
+my_parser.add_argument('-gr','--removefromgallery', help='Remove from gallery', const=True, nargs="?")
 my_parser.add_argument('-push', help="push to github", const=True, nargs="?")
 args=my_parser.parse_args()
 
@@ -138,5 +149,9 @@ elif args.addtomydetails:
     add_to_my_details()
 elif args.removefrommydetails:
     remove_from_my_details()
+elif args.addtogallery:
+    add_to_gallery()
+elif args.removefromgallery:
+    remove_from_gallery()
 elif args.push:
     push()
