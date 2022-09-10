@@ -1,30 +1,34 @@
 const d = import("../json/details.json", {assert : {type: 'json'}});
 console.log(d)
-const toggleTheme = () => {
-
+const toggleTheme = (theme = null) => {
     let element = document.body;
-    element.classList.toggle("dark-mode");
+    if (!theme || theme == "dark"){
+        element.classList.toggle("dark-mode");
+    }
+    console.log(theme)
 
     let links = document.getElementsByClassName("link");
     for (let i=0; i<links.length; i++){
-        if(links[i].classList.contains("link-light-mode")) {
-            links[i].classList.toggle("link-dark-mode")
-            links[i].classList.remove("link-light-mode")
-        }else {
-            links[i].classList.toggle("link-light-mode")
+        if(theme == "light" || links[i].classList.contains("link-dark-mode")) {
+            links[i].classList.add("link-light-mode")
             links[i].classList.remove("link-dark-mode")
+        }else{
+            links[i].classList.add("link-dark-mode")
+            links[i].classList.remove("link-light-mode")
         }
     }
 
     let image = document.getElementById("switch");
-    if (image.classList.contains("toggle-off")){
-        image.src = "resources/toggleon.png";
-        image.classList.add("toggle-on")
-        image.classList.remove("toggle-off")
-    } else {
+    if (theme == "light" || image.classList.contains("toggle-on")){
         image.src = "resources/toggleoff.png";
         image.classList.add("toggle-off")
         image.classList.remove("toggle-on")
+        localStorage.setItem("theme", "light");
+    } else{
+        image.src = "resources/toggleon.png";
+        image.classList.add("toggle-on")
+        image.classList.remove("toggle-off")
+        localStorage.setItem("theme", "dark");
     }
 }
 
@@ -36,9 +40,18 @@ const changeImage = () => {
 }
 
 const toggleThemeOnDefault = () => {
-    const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    if (isDark){
-        toggleTheme();
+    let theme = localStorage.getItem("theme");
+    if (theme){
+        if (theme=="dark"){
+            toggleTheme("dark")
+        } else {
+            toggleTheme("light")
+        }
+    } else {
+        const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (isDark) {
+            toggleTheme();
+        }
     }
 }
 
