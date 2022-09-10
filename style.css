@@ -20,9 +20,10 @@ body{
 }
 #dp{
     display:block;
+    margin-top: 5vh;
     margin-left: auto;
     margin-right: auto;
-    width: 40vh;
+    width: 35vh;
     border-radius: 100%;
 }
 #about{
@@ -41,7 +42,7 @@ body{
 }
 .moreabout{
     text-align: center;
-    padding-block-end: 20;
+    padding-block-end: 0;
     font-size: large;
     font-family: 'Courier New', Courier, monospace ;
 }
@@ -63,8 +64,9 @@ body{
     padding: 5px;
 }
 .toggle{
+    display: none;
     padding-top: 10px;
-    margin-left: 75%;
+    margin-left: auto;
     margin-right: auto;
     width: 100%;
     max-width: 400px;
@@ -87,7 +89,7 @@ body{
     margin-left: auto;
     margin-right: auto;
     width: 43vh;
-    height: 78vh;
+    height: 89vh;
     border-radius: 3%;
     overflow-y: scroll;
 }
