@@ -39,11 +39,9 @@ body{
     font-size: 120%;
     font-family: 'Courier New', Courier, monospace;
 }
-#moreabout{
+.moreabout{
     text-align: center;
     padding-block-end: 20;
-    padding-top: 10px;
-    padding-bottom: 40px;
     font-size: large;
     font-family: 'Courier New', Courier, monospace ;
 }
@@ -66,8 +64,7 @@ body{
 }
 .toggle{
     padding-top: 10px;
-    display:block;
-    margin-left: auto;
+    margin-left: 75%;
     margin-right: auto;
     width: 100%;
     max-width: 400px;
@@ -89,7 +86,7 @@ body{
     margin-top: 2vh;
     margin-left: auto;
     margin-right: auto;
-    width: 40vh;
+    width: 43vh;
     height: 78vh;
     border-radius: 3%;
     overflow-y: scroll;

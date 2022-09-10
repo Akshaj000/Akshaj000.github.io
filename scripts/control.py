@@ -14,11 +14,22 @@ except:
 
 
 def update_json(filename, entry):
+    contains = False
     with open(filename, "r+") as file:
         data = json.load(file)
-        data.append(entry)
-        file.seek(0)
-        json.dump(data, file)
+        for j in data:
+            if j == entry:
+                contains = True
+                break
+
+    if not contains:
+        with open(filename, "r+") as file:
+            data = json.load(file)
+            data.append(entry)
+            file.seek(0)
+            json.dump(data, file)
+    else:
+        print("already exist")
 
 def remove_from_json(name):
     data = []
