@@ -1,6 +1,7 @@
 import argparse
 import os
 from datetime import date
+from pydoc import describe
 import random
 import json
 import ast
@@ -122,12 +123,29 @@ def remove_from_my_details():
 
 def add_to_gallery():
     entry = {
-        "source" : pyip.inputStr("Enter the source link :  ")
+        "source" : pyip.inputURL("Enter the source link :  ")
     }
     update_json('../json/gallery.json', entry)
 
 def remove_from_gallery():
     remove_from_json("gallery")
+
+def add_project():
+    repository = pyip.inputURL("Enter the repository link : ")
+    title =  pyip.inputStr("Enter title : ")
+    description = pyip.inputStr("Enter description : ")
+    image = pyip.inputURL("Enter image URL : ")
+    entry = {
+        "repository" : repository,
+        "title" : title,
+        "description" : description,
+        "image" : image
+    }
+    update_json('../json/projects.json', entry)
+
+
+def remove_project():
+    remove_from_json("projects")
 
 def push():
     os.system("cd .. ; ls; git add json; git status; git push -f")
@@ -142,6 +160,8 @@ my_parser.add_argument('-b','--bookmark', help='Bookmark something', const=True,
 my_parser.add_argument('-br','--remove_bookmark', help='Remove bookmark', const=True, nargs="?")
 my_parser.add_argument('-g','--addtogallery', help='Add to gallery', const=True, nargs="?")
 my_parser.add_argument('-gr','--removefromgallery', help='Remove from gallery', const=True, nargs="?")
+my_parser.add_argument('-p','--addproject', help='Add new project', const=True, nargs="?")
+my_parser.add_argument('-pr','--removeproject', help='Remove project', const=True, nargs="?")
 my_parser.add_argument('-push', help="push to github", const=True, nargs="?")
 args=my_parser.parse_args()
 
@@ -164,5 +184,9 @@ elif args.addtogallery:
     add_to_gallery()
 elif args.removefromgallery:
     remove_from_gallery()
+elif args.addproject:
+    add_project()
+elif args.removeproject:
+    remove_project()
 elif args.push:
     push()

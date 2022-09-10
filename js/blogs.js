@@ -6,7 +6,7 @@ const addContent = (content) => {
     parent.style.padding = "30px";
     if(content["title"]){
         let head = document.createElement("h2")
-        head.style.fontFamily = "'Brush Script MT', cursive"
+        head.style.fontFamily = "Brush Script MT"
         head.append(content["title"])
         parent.append(head)
     }

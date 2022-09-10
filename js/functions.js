@@ -57,10 +57,11 @@ const changeDetailOnDefault = () => {
 
 const start = () => {
     toggleThemeOnDefault();
-
     try {
         changeDetailOnDefault();
-    }catch (e){}
+    }catch (e){
+        
+    }
 }
 
 start()

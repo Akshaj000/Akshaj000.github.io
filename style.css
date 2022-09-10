@@ -20,7 +20,6 @@ body{
 }
 #dp{
     display:block;
-    margin-top: 5vh;
     margin-left: auto;
     margin-right: auto;
     width: 35vh;
@@ -64,18 +63,18 @@ body{
     padding: 5px;
 }
 .toggle{
-    display: none;
-    padding-top: 10px;
+    display:block;
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
-    max-width: 400px;
-    height: auto;
+    width: 42vh;
     border-radius: 100%;
+}
+#switch{
+    width: 40px;
 }
 
 #home{
-    padding-top: 3vh;
+    margin-top: 2vh;
     display:block;
     margin-left: auto;
     margin-right: auto;
@@ -85,11 +84,10 @@ body{
 
 #lister {
     background: rgba(0, 0, 0, 0.26);
-    margin-top: 2vh;
     margin-left: auto;
     margin-right: auto;
     width: 43vh;
-    height: 89vh;
+    height: 85vh;
     border-radius: 3%;
     overflow-y: scroll;
 }
