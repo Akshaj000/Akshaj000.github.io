@@ -1,3 +1,5 @@
+const d = import("../json/details.json", {assert : {type: 'json'}});
+console.log(d)
 const toggleTheme = () => {
 
     let element = document.body;
@@ -48,11 +50,11 @@ const changeDetailOnDefault = () => {
     setTimeout(() => { changeDetailOnDefault(); }, 2000);
 }
 
-const onStart = () => {
+const start = () => {
     toggleThemeOnDefault();
     try {
         changeDetailOnDefault();
     }catch (e){}
 }
 
-onStart()
+start()
