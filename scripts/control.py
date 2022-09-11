@@ -58,7 +58,7 @@ def generate_blogfile():
     if new_filename in filenames:
         generate_blogfile()
     else:
-        text = "Title Here\n---\n{}\n---\nType Here".format(t)
+        text = "Title Here\n---\n{}\n---\n#\n---\nType Here".format(t)
         os.system("touch ./blogs/{}".format(new_filename))
         os.system('echo "{}" >> ./blogs/{}'.format(text, new_filename))
         return new_filename
@@ -69,7 +69,8 @@ def update_blog(filename):
     entry = {
         "title" : parts[0],
         "date" : parts[1],
-        "content" : parts[2]
+        "link" : parts[2],
+        "content" : parts[3]
     }
     update_json('../json/blogs.json', entry)
 

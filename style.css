@@ -17,6 +17,7 @@ body{
 
     background-color:rgba(225, 245, 206, 0.753);
     color:black;
+    overflow: hidden;
 }
 #dp{
     display:block;
@@ -104,19 +105,32 @@ body{
     border-radius: 2%;
     text-decoration: none;
 }
-
+.blog-element{
+    padding: 5px;
+    text-align: center;
+    display: block;
+    background: rgba(255, 255, 255, 0.16);
+    width: auto;
+    height: auto;
+    margin: 12px 12px;
+    color: white;
+    border-radius: 2%;
+    text-decoration: none;
+}
+.bookmark-item{
+    width: 98%;
+    height: auto;
+    min-height: 25vh;
+}
 .list-element:hover{
     background: rgba(255, 255, 255, 0.34);
 }
 
 ::-webkit-scrollbar {
     display: none;
+    background-color: rgba(255, 255, 255, 0.34);
 }
 
-.gallery-element{
-    width: 100%;
-    height: auto;
-}
 
 @media (min-width: 1500px){
     .profile-wrap{
@@ -126,9 +140,7 @@ body{
         align-items:flex-start;
     }
     .toggle{
-        position: absolute;
-        margin-left: 93vw;
-        margin-top: -28vh;
+        position: relative;
     }
     #dp{
         float: right;
@@ -155,5 +167,69 @@ body{
         width: 220px;
         height: 220px;
         border-radius: 100%;
+    }
+
+}
+
+@media (min-width: 800px){
+    .toggle{
+        margin-left: 93vw;
+        margin-top: 0vw;
+    }
+    #lister {
+        margin-top: -3vh;
+        position: relative;
+        width: 75vw;
+        height: 90vh;
+        border-radius: 3%;
+    }
+    .row-list{
+        display: flex;
+        flex-direction: column;
+        flex-flow: column wrap;        
+    }
+    .row-gallery{
+        display: flex;
+        flex-direction: row;
+        flex-flow: row wrap;
+    }
+    .row-project{
+        display: flex;
+        flex-direction: row;
+        flex-flow: row wrap;
+    }
+    .row-blog{
+        display: flex;
+        flex-direction: row;
+        flex-flow: row wrap;
+    }
+    .list-element{
+        margin: 0.6vw 0.6vw;
+        min-height: 22vh;
+        max-height: 85vh;
+        overflow-y: scroll;
+        max-width: 500px;
+    }
+    .blog-element{
+        flex: auto;
+        width: 20vh;
+        margin: 12px 12px;
+    }
+    .project-item{
+        flex: auto;
+        width: 19vw;
+        height: auto;
+        margin: 12px 12px;
+    }
+    .bookmark-item{
+        margin: 1px;
+        max-width: 400px;
+    }
+
+    .gallery-element{
+        width: 50%;
+        margin: 0px 0px;
+        background-color: black;
+
     }
 }

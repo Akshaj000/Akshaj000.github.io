@@ -26,6 +26,7 @@ const addContent = (content) => {
         child.style.width = "100%"
         parent.append(child)
     }
+    parent.classList.add("project-item")
     list_container.prepend(parent)
 }
 

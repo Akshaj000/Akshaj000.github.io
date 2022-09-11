@@ -28,8 +28,7 @@ const addContent = (content) => {
             parent.href = `https://www.youtube.com/watch?v=${splited[splited.length-1]}`
         }
         let child = document.createElement("iframe");
-        child.style.height = "30vh";
-        child.style.width = "98%";
+        child.classList.add("bookmark-item")
         child.src = content["link"]
         parent.append(child)
 
@@ -39,6 +38,7 @@ const addContent = (content) => {
         let link = document.createElement("a")
         link.href = content["link"]
         child.append(link)
+        child.classList.add("bookmark-item")
         parent.append(child)
         let script = document.createElement("script")
         script.src = "https://platform.twitter.com/widgets.js";
@@ -49,8 +49,7 @@ const addContent = (content) => {
     } else if (content["type"] == "instagram"){
         let child = document.createElement("iframe")
         child.src = content["link"]
-        child.style.height = "80vh"
-        child.style.width = "98%"
+        child.classList.add("bookmark-item")
         parent.append(child)
         let splited = content["link"].split("/")
         parent.href = `https://www.instagram.com/p/${splited[splited.length-2]}`
@@ -58,15 +57,13 @@ const addContent = (content) => {
     } else if (content["type"] == "other"){
         let child = document.createElement("iframe")
         child.src = content["link"]
-        child.style.height = "40vh"
-        child.style.width = "98%"
         child.style.overflow = "scroll"
+        child.classList.add("bookmark-item")
         parent.append(child)
     } else {
         let child = document.createElement("div")
-        child.style.height = "25vh"
-        child.style.width = "98%"
         parent.href = "#"
+        child.classList.add("bookmark-item")
         parent.append(child)
     }
     list_container.prepend(parent)

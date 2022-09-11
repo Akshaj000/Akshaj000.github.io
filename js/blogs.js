@@ -2,7 +2,7 @@ const addContent = (content) => {
     console.log(content)
     const list_container = document.getElementById('lister')
     let parent = document.createElement("a")
-    parent.classList.add("list-element")
+    parent.classList.add("blog-element")
     parent.style.padding = "30px";
     if(content["title"]){
         let head = document.createElement("h2")
