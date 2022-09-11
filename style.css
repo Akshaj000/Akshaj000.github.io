@@ -117,3 +117,43 @@ body{
     width: 100%;
     height: auto;
 }
+
+@media (min-width: 1500px){
+    .profile-wrap{
+        margin-top: 30vh;
+        margin-left: 30%;
+        margin-right: auto;
+        align-items:flex-start;
+    }
+    .toggle{
+        position: absolute;
+        margin-left: 93vw;
+        margin-top: -28vh;
+    }
+    #dp{
+        float: right;
+        margin-top: -3vh;
+        margin-right: 30%;
+        width: 15vw;
+        text-align: right;
+    }
+    #about{
+        margin-bottom: 30px;
+        text-align: left;
+    
+    }
+    #my-details{
+        text-align: left;
+    }
+    .moreabout{
+        text-align: left;
+        font-size: large;
+        margin-bottom: 20px;
+    }
+    .socials{
+        margin-left: 0px;
+        width: 220px;
+        height: 220px;
+        border-radius: 100%;
+    }
+}

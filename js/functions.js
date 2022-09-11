@@ -55,15 +55,36 @@ const toggleThemeOnDefault = () => {
     }
 }
 
+const delay = async (delayInms) => {
+    return new Promise(resolve => setTimeout(resolve, delayInms));
+  }
+
 const changeDetailOnDefault = () => {
     fetch("../json/details.json")
         .then(response => response.json())
-        .then(data => {
+        .then(async data => {
             let mydetails = data
             let details = document.getElementById("my-details");
-            const randomElement = mydetails[Math.floor(Math.random() * mydetails.length)];
-            details.textContent=randomElement.detail;
-            setTimeout(() => { changeDetailOnDefault(); }, 2000);
+            for (let j=0; j<mydetails.length; j++) {
+                let detail = mydetails[j].detail
+                for (let i = 0; i < detail.length; i++) {
+                    await delay(200)
+                        .then(() => {
+                            if (i == 0) {
+                                details.textContent = detail[0]
+                            } else {
+                                details.textContent += detail[i]
+                            }
+                        })
+                }
+                if(j==mydetails.length-1){
+                    j=-1;
+                }
+                details.textContent = detail;
+            }
+            setTimeout(() => {
+                changeDetailOnDefault();
+            }, 2000);
         }
     )
 }
