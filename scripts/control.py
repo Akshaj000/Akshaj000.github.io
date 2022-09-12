@@ -1,8 +1,6 @@
 import argparse
-from operator import contains
 import os
 from datetime import date
-from pydoc import describe
 import random
 import json
 import ast
@@ -52,44 +50,41 @@ def generate_blogfile():
     today = date.today()
     t = today.strftime("%b-%d-%Y")
     id = random.randint(0,100)
-    new_filename = str(t)+"-"+str(id)+".txt"
-    filenames = [f for f in os.listdir("./blogs")]
+    new_filename = str(t)+"-"+str(id)+".md"
+    filenames = [f for f in os.listdir("../blogs")]
     print(filenames)
     if new_filename in filenames:
         generate_blogfile()
     else:
-        text = "Title Here\n---\n{}\n---\n#\n---\nType Here".format(t)
-        os.system("touch ./blogs/{}".format(new_filename))
-        os.system('echo "{}" >> ./blogs/{}'.format(text, new_filename))
+        text = "# Title Here\n#### {}\nType Here".format(t)
+        os.system("touch ../blogs/{}".format(new_filename))
+        os.system('echo "{}" >> ../blogs/{}'.format(text, new_filename))
         return new_filename
 
 def update_blog(filename):
     f = open(filename, "r")
-    parts = [l.replace("\n","") for l in f.read().split("---")]
+    # parts = [l.replace("\n","") for l in f.read().split("---")]
     entry = {
-        "title" : parts[0],
-        "date" : parts[1],
-        "link" : parts[2],
-        "content" : parts[3]
+        "file" : filename.split("/")[2]
     }
     update_json('../json/blogs.json', entry)
 
 def write():
     filename = generate_blogfile()
-    os.system("gedit ./blogs/{}".format(filename))
-    update_blog("./blogs/{}".format(filename))
+    os.system("gedit ../blogs/{}".format(filename))
+    update_blog("../blogs/{}".format(filename))
 
 def edit():
     filename = pyip.inputStr("Enter filename : ")
-    os.system("gedit ./blogs/{}".format(filename))
-    update_blog("./blogs/{}".format(filename))
+    os.system("gedit ../blogs/{}".format(filename))
+    update_blog("../blogs/{}".format(filename))
 
 def update_all_blogs():
     with open('../json/blogs.json', "w") as file:
         json.dump([], file)
-    filenames = [f for f in os.listdir("./blogs")]
+    filenames = [f for f in os.listdir("../blogs")]
     for filename in filenames:
-        update_blog("./blogs/{}".format(filename))
+        update_blog("../blogs/{}".format(filename))
 
 def bookmark():
     type = pyip.inputMenu(['youtube', 'twitter', 'instagram', 'other'], lettered=True)

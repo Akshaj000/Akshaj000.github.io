@@ -4,6 +4,7 @@ const addContent = (content) => {
     let parent = document.createElement("a")
     parent.classList.add("list-element")
     parent.style.padding = "30px";
+    parent.style.color = localStorage.getItem("theme") == "light" ? "black" : "white"
     if(content["title"]){
         let head = document.createElement("h2")
         head.style.fontFamily = "Brush Script MT"

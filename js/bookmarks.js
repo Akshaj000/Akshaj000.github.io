@@ -1,8 +1,8 @@
 const addContent = (content) => {
-    console.log(content)
     const list_container = document.getElementById('lister')
     let parent = document.createElement("a")
     parent.classList.add("list-element")
+    parent.style.color = localStorage.getItem("theme") == "light" ? "black" : "white"
     if(content["title"]){
         let head = document.createElement("h2")
         head.append(content["title"])

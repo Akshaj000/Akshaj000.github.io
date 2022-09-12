@@ -5,7 +5,6 @@ const toggleTheme = (theme = null) => {
     if (!theme || theme == "dark"){
         element.classList.toggle("dark-mode");
     }
-    console.log(theme)
 
     let links = document.getElementsByClassName("link");
     for (let i=0; i<links.length; i++){
@@ -15,6 +14,16 @@ const toggleTheme = (theme = null) => {
         }else{
             links[i].classList.add("link-dark-mode")
             links[i].classList.remove("link-light-mode")
+        }
+    }
+
+    
+    let lister = document.getElementsByClassName("list-element")
+    for (let i=0 ; i<lister.length; i++){
+        if (localStorage.getItem("theme") == "dark"){
+            lister[i].style.color = "black";
+        } else {
+            lister[i].style.color = "white";
         }
     }
 
