@@ -1,0 +1,7 @@
+Demo Ecommerce Website Using Reactjs and Django.
+---
+https://user-images.githubusercontent.com/83636572/154805999-4988cba0-add9-4eb1-a102-cfefd38959cb.png
+---
+https://github.com/akshaj000/EcomWebsite_React-Django
+---
+A demo e-commerce website with Reactjs as its front end and Django as its backend. It has payment, add to cart functionalities along with a dedicated view for admin to add and edit products. This helped me learn about rest apis, different CRUD operations, json tokens, react hooks etc

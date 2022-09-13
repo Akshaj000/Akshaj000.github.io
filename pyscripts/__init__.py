@@ -17,6 +17,8 @@ __all__ = [
     'add_to_gallery',
     'remove_from_gallery',
     'add_project',
+    'edit_project',
     'remove_project',
+    'update_project',
     'push'
 ]

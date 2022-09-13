@@ -40,13 +40,13 @@ def write_blog():
 
 def edit_blog():
     filenames = [f for f in os.listdir("./blogs")]
-    filename = pyip.inputMenu(filenames,lettered=True)
+    filename = pyip.inputMenu(filenames,lettered=True, blank=True)
     os.system("gedit ./blogs/{}".format(filename))
     update_blog()
 
 def remove_blog():
     filenames = [f for f in os.listdir("./blogs")]
-    filename = pyip.inputMenu(filenames,lettered=True)
+    filename = pyip.inputMenu(filenames,lettered=True, blank=True)
     os.system("rm -r ./blogs/{}".format(filename))
     update_blog()
 
