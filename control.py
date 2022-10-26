@@ -1,5 +1,5 @@
 import argparse
-from pyscripts import*
+from pythonscripts import*
     
 my_parser = argparse.ArgumentParser(description='Helper for updating static page akshaj000.github.io')
 my_parser.add_argument('-d','--addtomydetails', help='Add to mydetail', const=True, nargs="?")

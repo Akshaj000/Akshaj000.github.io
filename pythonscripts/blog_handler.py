@@ -1,7 +1,6 @@
 import json, os, random
 from datetime import date
 import pyinputplus as pyip
-from sqlalchemy import true
 from .utils import update_json, remove_from_json
 
 def generate_blogfile():
