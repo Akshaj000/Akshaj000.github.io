@@ -11,6 +11,7 @@ const toggleTheme = (theme = null) => {
         if(theme == "light" || links[i].classList.contains("link-dark-mode")) {
             links[i].classList.add("link-light-mode")
             links[i].classList.remove("link-dark-mode")
+
         }else{
             links[i].classList.add("link-dark-mode")
             links[i].classList.remove("link-light-mode")
@@ -27,25 +28,36 @@ const toggleTheme = (theme = null) => {
         }
     }
 
+    let dp = document.getElementById("dp")
+    let darkimages = ["dp-one.JPG", "dp-two.png"]
     let image = document.getElementById("switch");
     if (theme == "light" || image.classList.contains("toggle-on")){
         image.src = "resources/toggleoff.png";
         image.classList.add("toggle-off")
         image.classList.remove("toggle-on")
         localStorage.setItem("theme", "light");
+        dp.valueOf().src = "resources/dp/dp-three.png"
     } else{
+        const randomImage = darkimages[Math.floor(Math.random() * darkimages.length)];
         image.src = "resources/toggleon.png";
         image.classList.add("toggle-on")
         image.classList.remove("toggle-off")
         localStorage.setItem("theme", "dark");
+        dp.valueOf().src = "resources/dp/"+randomImage
     }
 }
 
 const changeImage = () => {
-    let myimages = ["resources/profilepic.png"]
+    let myimages = ["dp-one.JPG", "dp-two.png"]
+    let theme = localStorage.getItem("theme");
+    if (theme){
+        if (theme=="light"){
+            myimages = ["dp-three.png"]
+        }
+    }
     let dp = document.getElementById("dp")
     const randomImage = myimages[Math.floor(Math.random() * myimages.length)];
-    dp.valueOf().src = randomImage
+    dp.valueOf().src = "resources/dp/"+randomImage
 }
 
 const toggleThemeOnDefault = () => {
