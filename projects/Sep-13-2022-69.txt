@@ -4,4 +4,4 @@ https://user-images.githubusercontent.com/83636572/151711244-1592a9fa-fff3-4f25-
 ---
 https://github.com/Akshaj000/NaiveBayesClassifier_CropRecommender 
 ---
-This is a python notebook where i experimented multiple algorithm such as naive bayes, random forest and descision tree to predict the best crop based on some features. I underke a model using sklearn, also implemented a naive bayes classifier from scratch. I watched youtube tutorials to understand the mathematical concept behind this algorithm. This was part of our semester one maths project. I also understood how to clean, visualise, split dataframes.
+This is a python notebook where i experimented multiple algorithm such as naive bayes, random forest and descision tree to predict the best crop based on some features. I understood how to make a model using sklearn, also implemented a naive bayes classifier from scratch. I watched youtube tutorials to understand the mathematical concept behind this algorithm. This was part of our semester one maths project. It taught me how to clean, visualise, split dataframes.

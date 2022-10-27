@@ -4,4 +4,4 @@ https://user-images.githubusercontent.com/83636572/175829112-94aaab54-fd2a-4bab-
 ---
 https://github.com/Aashray446/DSA_MADE_EASY
 ---
-This is our second semster group project from where we learned web development along with data structure concepts. This project can help those who are learning basic data structure and algorithm concept by giving a graphical simulation. This contains Arrays, Binary Tree, Queues, Sorting and Searching Algorithms, Linked Lists.
+This was our second semster group project were we learned web development along with data structure concepts. This project can help those who are learning basic data structure and algorithm concepts by giving a graphical simulation. This contains Arrays, Binary Tree, Queues, Sorting and Searching Algorithms, Linked Lists.

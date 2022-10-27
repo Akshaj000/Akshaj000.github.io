@@ -32,7 +32,6 @@ const addContent = (content) => {
 }
 
 const fetchContent = () => {
-    console.log("here")
     fetch("../json/projects.json")
         .then(response => response.json())
         .then(data => {

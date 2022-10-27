@@ -1,5 +1,3 @@
-const d = import("../json/details.json", {assert : {type: 'json'}});
-console.log(d)
 const toggleTheme = (theme = null) => {
     let element = document.body;
     if (!theme || theme == "dark"){

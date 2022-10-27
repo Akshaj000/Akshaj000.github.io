@@ -4,4 +4,4 @@ https://github.com/Akshaj000/Forensic-Management-System/raw/main/Screenshot.png
 ---
 https://github.com/Akshaj000/Forensic-Management-System
 ---
-This is This is a Forensic Management System implemented using basic Java using object oriented programming concepts. This project helped me understand oops better, taught how to work as team, taught how to write java.
+This is This is a Forensic Management System implemented using basic Java using object oriented programming concepts. This project helped me understand oops better, taught how to work as team and to write java code.
