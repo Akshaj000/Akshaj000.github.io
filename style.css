@@ -166,6 +166,10 @@ body{
         height: 220px;
         border-radius: 100%;
     }
+    .blog-element{
+        max-width: 50%;
+        min-width: 20vw;
+    }
 
 }
 
